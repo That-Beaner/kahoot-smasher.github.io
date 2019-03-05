@@ -17,9 +17,9 @@ var showCSS=false;
 var addMoreButton= document.createElement("input");
 var namingMethod = 0;
 var namingMethods = ["Random name","Random Ending","Choose Name"];
-var namesExample= ["Ben Dover","Eileen Dover","Not in ur class","Stephanie","Sportacus","Robbie Rotten","Ziggy","L0kesh;)","RealPerson.mp4","ur search history","Cael Cooper:)","Kim-Jong Uno","Sernie Banders","lorcan't","Not A Bot","setup.exe","admin1"];
+var namesExample= ["Mohxy", "Vxire", "Gahmuret", "Tara", "Tomi", "Argor", "Kelretu", "Polyzynn", "Tekrala", "Kesta", "Suelle", "cuntlad", "BuyMyAids", "Wilihey", "Milkshook", "Kanker Luke", "SUCK YOUR MUM", "Acer", "ChRoMoSoMe CoLlEcToR", "Deep-fried Daddy", "Deli Tuna", "Jordane", "W33d Goddess", "H3mp Goddess", "Ben Dover", "Eileen Dover", "Suq Madiq", "Bita Negar"];
    // var i;
-    //i = 1;
+    //i = 1;,
 
 addMoreButton.type = "button";
 addMoreButton.value = "Smash More!";
