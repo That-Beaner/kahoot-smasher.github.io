@@ -67,73 +67,73 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
                     name = randomCaps($("#base").val());
                     break;
                 }
-            default:
-                name = "Smasher"+generateRandomLetter(5);
+                default:
+                    name = "Smasher"+generateRandomLetter(5);
+                }
+                return name;
             }
-            return name;
-        }
-        function updateName(){
-            $("#nameExample").html("Example: " + generateName(namingMethod));
-        }
-        function showExtension(){
-            $("#install").css("display", "block");
-        }
-        function hideExtension(){
-            $("#install").css("display", "none");
-        }
-        function addMoreKahoots(){
-            document.body.removeChild(addMoreButton);
-            for(var i=0; i<5; i++){
-                var frame = document.createElement("iframe");
-                frame.src="http://www.kahoot.it";
-                document.body.appendChild(frame);
+            function updateName(){
+                $("#nameExample").html("Example: " + generateName(namingMethod));
             }
-            document.body.appendChild(addMoreButton);
-        }
-        function showSettings(){
-            $("#settings").css("display", "block");
-        }
-        function hideSettings(){
-            numberOfKahoots = parseInt($("#numberOfKahoots").val());
-            $("#settings").css("display", "none");
-        }
-        function showAbout(){
-            $("#info").css("display","block");
-        }
-        function hideAbout(){
-            $("#info").css("display","none");
-        }
-        function changeNaming(){
-        namingMethod += 1;
-        if(namingMethod == namingMethods.length){
-            namingMethod=0;
-        }
-        if(namingMethod == 0){
-            $("#baseName").css("display", "none");
-            $("#base").css("display", "none");
-        } else {
-            $("#baseName").css("display", "block");
-            $("#base").css("display", "block");
-        }
-        $("#namingMethod").attr('value', namingMethods[namingMethod]);
-        updateName();
-    }
-    function toggleInLine(){
-        loadInline = !loadInline;
-        var newValue = "";
-        if(loadInline){
-            newValue="Yes";
-        } else {
-            newValue="No";
-        }
-        $("#inline").attr('value',newValue);
-    }
-    function loadCssToggle(){
-        showCSS = !showCSS;
-        var newValue = "";
-        if(showCSS){
-            newValue="Beautiful";
-        } else {
+            function showExtension(){
+                $("#install").css("display", "block");
+            }
+            function hideExtension(){
+                $("#install").css("display", "none");
+            }
+            function addMoreKahoots(){
+                document.body.removeChild(addMoreButton);
+                for(var i=0; i<5; i++){
+                    var frame = document.createElement("iframe");
+                    frame.src="http://www.kahoot.it";
+                    document.body.appendChild(frame);
+                }
+                document.body.appendChild(addMoreButton);
+            }
+            function showSettings(){
+                $("#settings").css("display", "block");
+            }
+            function hideSettings(){
+                numberOfKahoots = parseInt($("#numberOfKahoots").val());
+                $("#settings").css("display", "none");
+            }
+            function showAbout(){
+                $("#info").css("display","block");
+            }
+            function hideAbout(){
+                $("#info").css("display","none");
+            }
+            function changeNaming(){
+                namingMethod += 1;
+                if(namingMethod == namingMethods.length){
+                    namingMethod=0;
+                }
+                if(namingMethod == 0){
+                    $("#baseName").css("display", "none");
+                    $("#base").css("display", "none");
+                } else {
+                    $("#baseName").css("display", "block");
+                    $("#base").css("display", "block");
+                }
+                $("#namingMethod").attr('value', namingMethods[namingMethod]);
+                updateName();
+            }
+            function toggleInLine(){
+                loadInline = !loadInline;
+                var newValue = "";
+                if(loadInline){
+                    newValue="Yes";
+                } else {
+                    newValue="No";
+                }
+                $("#inline").attr('value',newValue);
+            }
+            function loadCssToggle(){
+                showCSS = !showCSS;
+                var newValue = "";
+                if(showCSS){
+                    newValue="Beautiful";
+                } else {
             newValue="High";
         }
         $("#cssLoad").attr('value', newValue);
