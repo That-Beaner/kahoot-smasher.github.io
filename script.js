@@ -21,7 +21,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
     addMoreButton.type = "button";
     addMoreButton.value = "Smash More!";
-    addMoreButton.onmousedown=function(){
+    addMoreButton.onmousedown = function(){
         addMoreKahoots();
     };
     //addMoreButton.class = "mainpage";
@@ -33,7 +33,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     });
     function randomCaps(baseName){
         var newName = "";
-        for(var i=0; i< baseName.length; i++){
+        for(var i = 0; i < baseName.length; i++){
             if(Math.random() > 0.5){
                 newName += baseName[i];
             } else {
