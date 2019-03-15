@@ -25,7 +25,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         addMoreKahoots();
     };
     //addMoreButton.class = "mainpage";
-    addMoreButton.style="margin-bottom:0.5%;margin-left:0.5%;width:99%;height:50px;position:fixed;display:block;bottom:0;background-color:#333;outline: 0;box-shadow: none;border: 1px solid #2e2e2e;color:white;font-family: montserrat,'helvetica neue',helvetica,arial,sans-serif;font-weight: 700;font-size:20px;";
+    addMoreButton.style = "margin-bottom:0.5%;margin-left:0.5%;width:99%;height:50px;position:fixed;display:block;bottom:0;background-color:#333;outline: 0;box-shadow: none;border: 1px solid #2e2e2e;color:white;font-family: montserrat,'helvetica neue',helvetica,arial,sans-serif;font-weight: 700;font-size:20px;";
     $("#GamePin").keyup(function (e){
         if (e.which == 13){
             buttonClicked();
@@ -34,10 +34,10 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     function randomCaps(baseName){
         var newName = "";
         for(var i=0; i< baseName.length; i++){
-            if(Math.random()>0.5){
-                newName+=baseName[i];
+            if(Math.random() > 0.5){
+                newName += baseName[i];
             } else {
-                newName+=baseName[i];
+                newName += baseName[i];
             }
         }
         return newName;
@@ -45,22 +45,22 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     function generateRandomLetter(length){
         var randomLetters = "";
         var letters= "qwertyuiopasdfghjklzxcvbnm1234567890";
-        for(var i=0; i<length; i++){
-            randomLetters += letters[Math.floor(Math.random()*letters.length)];
+        for(var i = 0; i < length; i++){
+            randomLetters += letters[Math.floor(Math.random() * letters.length)];
         }
         return randomLetters;   
     }
     function generateName(mode){
-        var name="";
+        var name = "";
         switch(mode){
             case 0: // Random Name
-                name = randomCaps(namesExample[Math.floor(Math.random()*namesExample.length)]);
+                name = randomCaps(namesExample[Math.floor(Math.random() * namesExample.length)]);
                 break;
             case 1: // Random Ending
-                name = ($("#base").val().substr(0,11) +"." +generateRandomLetter(5)).substr(0,16);
+                name = ($("#base").val().substr(0, 11) + "." +generateRandomLetter(5)).substr(0, 16);
                 break;
             case 2: // Random Caps
-                if($("#base").val().length<7){
+                if($("#base").val().length < 7){
                     name = randomCaps($("#base").val()) + "" +generateRandomLetter(0);
                     break;
                 } else {
@@ -68,7 +68,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
                     break;
                 }
                 default:
-                    name = "Smasher"+generateRandomLetter(5);
+                    name = "Smasher" + generateRandomLetter(5);
                 }
                 return name;
             }
@@ -83,9 +83,9 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
             }
             function addMoreKahoots(){
                 document.body.removeChild(addMoreButton);
-                for(var i=0; i<5; i++){
+                for(var i = 0; i < 5; i++){
                     var frame = document.createElement("iframe");
-                    frame.src="http://www.kahoot.it";
+                    frame.src = "http://www.kahoot.it";
                     document.body.appendChild(frame);
                 }
                 document.body.appendChild(addMoreButton);
@@ -106,7 +106,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
             function changeNaming(){
                 namingMethod += 1;
                 if(namingMethod == namingMethods.length){
-                    namingMethod=0;
+                    namingMethod = 0;
                 }
                 if(namingMethod == 0){
                     $("#baseName").css("display", "none");
@@ -122,19 +122,19 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
                 loadInline = !loadInline;
                 var newValue = "";
                 if(loadInline){
-                    newValue="Yes";
+                    newValue = "Yes";
                 } else {
-                    newValue="No";
+                    newValue = "No";
                 }
-                $("#inline").attr('value',newValue);
+                $("#inline").attr('value', newValue);
             }
             function loadCssToggle(){
                 showCSS = !showCSS;
                 var newValue = "";
                 if(showCSS){
-                    newValue="Beautiful";
+                    newValue = "Beautiful";
                 } else {
-            newValue="High";
+            newValue = "High";
         }
         $("#cssLoad").attr('value', newValue);
         $("#asdfghjklqwertyuio").attr("cssEnabled", showCSS);
@@ -149,7 +149,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         if(gameID == ""){
             canContinue = false;
         }
-        for(var i=0; i<gameID.length; i++){
+        for(var i = 0; i < gameID.length; i++){
             if(isNaN(parseInt(gameID[i]))){
                 canContinue = false;
             }
@@ -157,9 +157,9 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
         if(canContinue){
             $("#asdfghjklqwertyuio").attr("value", gameID);
             $("#asdfghjklqwertyuio").attr("namingConvention", namingMethod);
-            $("#asdfghjklqwertyuio").attr("baseName",$("#base").val());
+            $("#asdfghjklqwertyuio").attr("baseName", $("#base").val());
             var newHTML = "<h1>Kahoot smashing in progress...</h1>";
-            for(var i=0; i< numberOfKahoots; i++){
+            for(var i = 0; i < numberOfKahoots; i++){
                 if(loadInline){
                     newHTML += "<iframe src='https://kahoot.it'></iframe>";
                 } else {
@@ -174,7 +174,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
     }
     $(document).ready(function(){setTimeout(function(){
         updateName();
-        $('#GamePin').on('keyup', function (e){
+        $('#GamePin').on('keyup', function(e){
             if(e.keyCode == 13){
                 buttonClicked();
             }
